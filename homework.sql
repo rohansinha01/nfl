@@ -11,7 +11,7 @@ SELECT head_coach FROM teams WHERE division = 'South' AND conference='AFC';
 SELECT COUNT(players) FROM players
 
 -- The team names and head coaches of the NFC North and AFC East
-SELECT head_coach FROM teams WHERE division = 'North' AND conference = 'NFC' OR division = 'East' AND conference = 'AFC';
+SELECT head_coach, name FROM teams WHERE division = 'North' AND conference = 'NFC' OR division = 'East' AND conference = 'AFC';
 -- The 50 players with the highest salaries
 SELECT players FROM players ORDER BY salary DESC limit 50
 -- The average salary of all NFL players
@@ -19,5 +19,8 @@ SELECT avg(salary) FROM players;
 -- The names and positions of players with a salary above 10_000_000
 SELECT players, position FROM players WHERE salary > 10000000;
 -- The player with the highest salary in the NFL
+SELECT players FROM players ORDER BY salary DESC Limit 1;
 -- The name and position of the first 100 players with the lowest salaries
+SELECT players FROM players ORDER BY salary ASC limit 100;
 -- The average salary for a DE in the nfl
+SELECT avg(salary) FROM players WHERE position = 'DE';
